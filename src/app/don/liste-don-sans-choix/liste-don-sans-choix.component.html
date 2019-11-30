@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col mb-4 mt-4"><h2> Liste des Dons sans choix </h2></div>
+
+
+  </div>
+  <table class="table table-sm">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Date reception</th>
+      <th scope="col">Donateur</th>
+      <th scope="col">adresse</th>
+      <th scope="col">reference</th>
+      <th scope="col">type</th>
+      <th scope="col">telephone</th>
+      <th scope="col">description</th>
+      <th scope="col">photo</th>
+      <th scope="col">edit</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let c of formualire">
+      <th scope="row">{{c.don_id}}</th>
+      <td>{{c.dateReception}}</td>
+      <td>{{c.nomDonateur}}</td>
+      <td>{{c.adresse}}</td>
+      <td>{{c.reference}}</td>
+      <td>{{c.type}}</td>
+      <td>{{c.tel}}</td>
+      <td>{{c.description}}
+      <td>photo</td>
+      <td><input class="btn btn-outline-warning  btn-sm" (click)="edit(c.don_id)" value="edit">  </td>
+      <!-- <td *ngIf=" [c.photo] == ''"> <img height="100" src="../../../assets/img/images.jpg" />  </td>
+       <td *ngIf=" [c.photo] != ''"> <img height="100" src="../../../assets/img/{{c.photo}}" />  </td>
+       <td>{{c.classe.nom}}</td>
+       <td><input class="btn btn-outline-warning  btn-sm" (click)="edit(c.id)" value="edit">  </td>
+       <td><input class="btn btn-outline-danger  btn-sm" (click)="delete(c.id)" value="delete">  </td>
+       <td><input class="btn btn-outline-danger  btn-sm" (click)="photo(c.id)" value="photo">  </td>-->
+    </tr>
+
+    </tbody>
+  </table>
+
+</div>

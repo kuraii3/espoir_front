@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="alert alert-warning" *ngIf="DonForm.invalid && DonForm.dirty">enter valid form</div>
+  <h2>choix don</h2>
+  <form  (ngSubmit)="!DonForm.invalid " class="was-validated" #DonForm="ngForm">
+    <div class="form-group">
+      <label for="nomDonateur">nom Donateur:</label>
+      <input type="text" class="form-control" id="nomDonateur" placeholder="Enter nom Donateur" name="nomDonateur"  [(ngModel)]="Don.nomDonateur"required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <div class="form-group">
+      <label for="type">type:</label>
+      <input type="text" class="form-control" id="type" placeholder="Enter type" name="type"  [(ngModel)]="Don.type"required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <div class="form-group">
+      <label for="reference">reference:</label>
+      <input type="text" class="form-control" id="reference" placeholder="Enter reference" name="reference"  [(ngModel)]="Don.reference"required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <div class="form-group">
+      <label for="adresse">adresse:</label>
+      <input type="text" class="form-control" id="adresse" placeholder="Enter Class name" name="adresse"  [(ngModel)]="Don.adresse"required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <div class="form-group">
+      <label for="tel">tel:</label>
+      <input type="text" class="form-control" id="tel" placeholder="Enter telephone number" name="tel"  [(ngModel)]="Don.tel"required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <div class="form-group">
+      <label for="reception">Date reception:</label>
+      <input type="date" class="form-control" id="reception" placeholder="Enter reception" name="reception"
+             [ngModel]="Don.dateReception |  date: 'yyyy-MM-dd'" (ngModelChange)="Don.dateReception= $event"
+             required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <div class="form-group">
+      <label for="description">description:</label>
+      <input type="text" class="form-control" id="description" placeholder="Enter description" name="description"  [(ngModel)]="Don.description"required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <button type="submit" class="btn btn-success "(click)="accepter(Don.don_id , Don)" >accepter </button>
+    <button type="submit" class="btn btn-danger" (click)="refuser(Don.don_id , Don)">refuser </button>
+  </form>
+</div>

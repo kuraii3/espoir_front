@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="alert alert-warning" *ngIf="DonForm.invalid && DonForm.dirty">enter valid form</div>
+  <h2>Add new Depot de vente</h2>
+  <form  (ngSubmit)="!DonForm.invalid && save() " class="was-validated" #DonForm="ngForm">
+    <div class="form-group">
+      <label for="datedept">Date de depot:</label>
+      <input type="date" class="form-control" id="datedept" placeholder="Enter reception" name="datedept"  [(ngModel)]="DepotVente.dateDepot"required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="montant">Le Montant:</label>
+      <input type="text" class="form-control" id="montant" placeholder="Enter le Montant" name="montant"  [(ngModel)]="DepotVente.montant"required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="dateVentDept">Date de la vente:</label>
+      <input type="date" class="form-control" id="dateVentDept" placeholder="Enter reception" name="dateVentDept"  [(ngModel)]="DepotVente.dateVenteDepot"required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+
+
+
+
+    <div class="form-group">
+      <label for="montantVente">Le Montant de la vente:</label>
+      <input type="text" class="form-control" id="montantVente" placeholder="Enter le Montant de la vente" name="montantVente"  [(ngModel)]="DepotVente.montantVente"required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+
+
+
+
+    <button type="submit" class="btn btn-primary" [disabled]="DonForm.invalid">Submit</button>
+  </form>
+
+
+</div>

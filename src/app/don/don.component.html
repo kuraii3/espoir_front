@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="alert alert-warning" *ngIf="DonForm.invalid && DonForm.dirty">Veuillez remplir tous les champs obligatoires.</div>
+  <h2>Ajouter un don</h2>
+  <div class="split">
+  <form  (ngSubmit)="!DonForm.invalid && save()" class="was-validated" #DonForm="ngForm">
+    <div class="changer">
+      <label for="nomDonateur">Nom Donateur:</label>
+      <input type="text" class="form-control" id="nomDonateur" placeholder="Enter nom Donateur" name="nomDonateur"  [(ngModel)]="Don.nomDonateur"required>
+      <div class="valid-feedback">Valide.</div>
+      <div class="invalid-feedback">Veuillez remplir ce champ.</div>
+    </div>
+    <div class="changer">
+      <label for="type">Type:</label>
+      <input type="text" class="form-control" id="type" placeholder="Enter type" name="type"  [(ngModel)]="Don.type"required>
+      <div class="valid-feedback">Valide.</div>
+      <div class="invalid-feedback">Veuillez remplir ce champ.</div>
+    </div>
+    <div class="changer">
+      <label for="reference">Référence:</label>
+      <input type="text" class="form-control" id="reference" placeholder="Enter reference" name="reference"  [(ngModel)]="Don.reference"required>
+      <div class="valid-feedback">Valide.</div>
+      <div class="invalid-feedback">Veuillez remplir ce champ.</div>
+    </div>
+
+    <div class="changer">
+      <label for="adresse">Adresse:</label>
+      <input type="text" class="form-control" id="adresse" placeholder="Enter Class name" name="adresse"  [(ngModel)]="Don.adresse"required>
+      <div class="valid-feedback">Valide.</div>
+      <div class="invalid-feedback">Veuillez remplir ce champ.</div>
+    </div>
+    <div class="changer">
+      <label for="tel">Numéro Téléphone:</label>
+      <input type="text" class="form-control" id="tel" placeholder="Enter telephone number" name="tel"  [(ngModel)]="Don.tel"required>
+      <div class="valid-feedback">Valide.</div>
+      <div class="invalid-feedback">Veuillez remplir ce champ.</div>
+    </div>
+    <div class="changer">
+      <label for="reception">Date reception de l'offre:</label>
+      <input type="date" class="form-control" id="reception" placeholder="Enter reception" name="reception"  [ngModel]=Don.dateReception
+              required>
+      <div class="valid-feedback">Valide.</div>
+      <div class="invalid-feedback">Veuillez remplir ce champ.</div>
+    </div>
+    <div class="changer">
+      <label for="description">description:</label>
+      <input type="text" class="form-control" id="description" placeholder="Enter description" name="description"  [(ngModel)]="Don.description"required>
+      <div class="valid-feedback">Valide.</div>
+      <div class="invalid-feedback">Veuillez remplir ce champ.</div>
+    </div>
+    <div>
+        <img height="100" src="{{photo}}" />
+        <p>                 <button class="btn btn-dark" (click)="onEditPhoto(Don2)">edit</button></p>
+        <p>
+
+        <input type="file" (change)="onSelectedFile($event)">
+        <button class="btn btn-success" (click)="upload()">Envoyer</button>
+      </p>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="DonForm.invalid">Soumettre</button>
+  </form>
+</div>

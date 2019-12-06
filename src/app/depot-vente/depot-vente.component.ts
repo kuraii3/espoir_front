@@ -18,15 +18,15 @@ export class DepotVenteComponent implements OnInit {
   datedept = new Date();
   dateVentedept = new Date();
   n: any;
-
   constructor(private depotVenteService: DepotVenteService, private router: ActivatedRoute, private route: Router, private datePipe: DatePipe) {
-    // @ts-ignore
+  // @ts-ignore
     this.datedept =  this.datePipe.transform(this.datedept, 'yyyy-MM-dd');
 
     // @ts-ignore
     this.dateVentedept =  this.datePipe.transform(this.dateVentedept, 'yyyy-MM-dd');
 
   }
+
 
   ngOnInit() {
 

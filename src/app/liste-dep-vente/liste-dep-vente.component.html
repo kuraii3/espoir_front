@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col mb-4 mt-4"><h2> Liste dépot de ventes </h2></div>
+
+
+  </div>
+  <table class="table table-sm">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">depot_id</th>
+      <th scope="col">dateDepot</th>
+      <th scope="col">dateVenteDepot</th>
+      <th scope="col">montant</th>
+      <th scope="col">montantVente</th>
+     <!-- <th scope="col">Don id</th>-->
+      <th scope="col">Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let c of formualire">
+      <th scope="row">{{c.depot_id}}</th>
+      <td>{{c.dateDepot}}</td>
+      <td>{{c.dateVenteDepot}}</td>
+      <td>{{c.montant}}</td>
+      <td>{{c.montantVente}}</td>
+      <td>{{c.don_id}}</td>
+      <td><input class="btn btn-outline-danger  btn-sm" (click)="deleteDepVente(c.depot_id)" value="Delete">  </td>
+
+    </tr>
+
+    </tbody>
+  </table>
+
+</div>

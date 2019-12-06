@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import {DepotVente} from "../modele/depot-vente";
+import {DepotVente} from '../modele/depot-vente';
 @Injectable({
   providedIn: 'root'
 })
@@ -31,5 +31,8 @@ export class DepotVenteService {
 
   lastid() {
     return this.http.get('http://localhost:8081/deptVente/lastid/');
+  }
+  deleteDepotVente(id) {
+    return this.http.delete(`http://localhost:8081/deptVente/delete/${id}`);
   }
 }

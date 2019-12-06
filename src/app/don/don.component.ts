@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {DonService} from "../services/don.service";
-import {Don} from "../modele/don";
+import {DonService} from '../services/don.service';
+import {Don} from '../modele/don';
 import { DatePipe } from '@angular/common';
-import {Router} from "@angular/router";
-import {HttpEventType, HttpResponse} from "@angular/common/http";
+import {Router} from '@angular/router';
+import {HttpEventType, HttpResponse} from '@angular/common/http';
 @Component({
   selector: 'app-don',
   templateUrl: './don.component.html',
@@ -11,7 +11,7 @@ import {HttpEventType, HttpResponse} from "@angular/common/http";
   providers: [DatePipe]
 })
 export class DonComponent implements OnInit {
-formualire:any;
+formualire: any;
 Don: Don;
 Don2: Don;
 myDate = new Date();
@@ -23,7 +23,7 @@ myDate = new Date();
   private currentFileUpload: any;
   photo: any ;
   id: any ;
-  n:any;
+  n: any;
   constructor(private donServ: DonService, private datePipe: DatePipe , private route: Router) {
     // @ts-ignore
     this.myDate =  this.datePipe.transform(this.myDate, 'yyyy-MM-dd');
@@ -39,56 +39,56 @@ myDate = new Date();
     // this.photo = '../../../assets/img/' + this.id + '.jpg';
 
   }
-getAll(){
+getAll() {
     this.donServ.AllDon().subscribe(
-      data=> {
-        this.formualire =data;
-        console.log(data)
+      data => {
+        this.formualire = data;
+        console.log(data);
       }
-    )
+    );
 }
-  getLastId(){
+  getLastId() {
     this.donServ.lastid().subscribe(
-      data=> {
-        this.id =data;
+      data => {
+        this.id = data;
         this.id;
-        console.log('hello ' + this.id )
+        console.log('hello ' + this.id );
       }
-    )
+    );
   }
-  getLastId2(){
+  getLastId2() {
     return new Promise(resolve => {
       this.donServ.lastid().subscribe(
-        data=> {
-          this.id =data;
+        data => {
+          this.id = data;
           this.id;
           console.log('hello ' + this.id );
-          resolve(this.id)
+          resolve(this.id);
         }
-      )
-    })
+      );
+    });
   }
-save(){
+save() {
   this.donServ.Savedon(this.Don).subscribe(
-data=>{
+data => {
   this.getLastId2().then(  res => { // Success
-    console.log('llaalaa '+res);
+    console.log('llaalaa ' + res);
     this.n = res;
     this.findbyid(this.n);
-    console.log('n est '+this.n);
+    console.log('n est ' + this.n);
 
 
   });
   this.route.navigate(['home']);
 }
-)
+);
 
 }
-  refuser(){
+  refuser() {
     this.donServ.Savedon(this.Don).subscribe(
-      data=>{
-        this.route.navigate(['home']);}
-    )
+      data => {
+        this.route.navigate(['home']); }
+    );
   }
 
   findbyid(id) {

@@ -6,14 +6,15 @@ import {PmComponent} from './pm/pm.component';
 import {AdminComponent} from './admin/admin.component';
 import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
-import {DonComponent} from "./don/don.component";
-import {ListeDonComponent} from "./don/liste-don/liste-don.component";
-import {EditDonComponent} from "./don/edit-don/edit-don.component";
-import {FormulaireDonAccepterComponent} from "./don/formulaire-don-accepter/formulaire-don-accepter.component";
-import {ListeDonSansChoixComponent} from "./don/liste-don-sans-choix/liste-don-sans-choix.component";
-import {ArchiveComponent} from "./don/archive/archive.component";
-import {RouteGuardService} from "./auth/route-guard.service";
-
+import {DonComponent} from './don/don.component';
+import {ListeDonComponent} from './don/liste-don/liste-don.component';
+import {EditDonComponent} from './don/edit-don/edit-don.component';
+import {FormulaireDonAccepterComponent} from './don/formulaire-don-accepter/formulaire-don-accepter.component';
+import {ListeDonSansChoixComponent} from './don/liste-don-sans-choix/liste-don-sans-choix.component';
+import {ArchiveComponent} from './don/archive/archive.component';
+import {RouteGuardService} from './auth/route-guard.service';
+import {DepotVenteComponent} from './depot-vente/depot-vente.component'  ;
+import {ListeDepVenteComponent} from "./liste-dep-vente/liste-dep-vente.component";
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -28,6 +29,9 @@ const routes: Routes = [
   {path: 'Archive', component: ArchiveComponent, canActivate: [RouteGuardService]},
   {path: 'editDon/:id', component: EditDonComponent, canActivate: [RouteGuardService]},
   {path: 'formAccepter/:id', component: FormulaireDonAccepterComponent, canActivate: [RouteGuardService]},
+  {path: 'depotVente', component: DepotVenteComponent, canActivate: [RouteGuardService]},
+  {path: 'listeDepotVente', component: ListeDepVenteComponent, canActivate: [RouteGuardService]},
+
   {path: '', redirectTo: 'home', pathMatch: 'full'}
 ];
 

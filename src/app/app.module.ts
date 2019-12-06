@@ -18,7 +18,9 @@ import { MenuComponent } from './menu/menu.component';
 import { FormulaireDonAccepterComponent } from './don/formulaire-don-accepter/formulaire-don-accepter.component';
 import { ListeDonSansChoixComponent } from './don/liste-don-sans-choix/liste-don-sans-choix.component';
 import { ArchiveComponent } from './don/archive/archive.component';
-import {httpInterceptorProviders} from "./auth/auth-interceptor";
+import {httpInterceptorProviders} from './auth/auth-interceptor';
+import {DepotVenteComponent} from './depot-vente/depot-vente.component';
+import { ListeDepVenteComponent } from './liste-dep-vente/liste-dep-vente.component';
 
 
 @NgModule({
@@ -33,10 +35,13 @@ import {httpInterceptorProviders} from "./auth/auth-interceptor";
     DonComponent,
     ListeDonComponent,
     EditDonComponent,
+    DepotVenteComponent,
     MenuComponent,
     FormulaireDonAccepterComponent,
     ListeDonSansChoixComponent,
     ArchiveComponent,
+    ListeDepVenteComponent,
+    ListeDepVenteComponent,
 
   ],
   imports: [

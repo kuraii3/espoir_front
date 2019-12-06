@@ -15,6 +15,7 @@ import {ArchiveComponent} from './don/archive/archive.component';
 import {RouteGuardService} from './auth/route-guard.service';
 import {DepotVenteComponent} from './depot-vente/depot-vente.component'  ;
 import {ListeDepVenteComponent} from "./liste-dep-vente/liste-dep-vente.component";
+import {GardeMeubleComponent} from './garde-meuble/garde-meuble.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -31,7 +32,7 @@ const routes: Routes = [
   {path: 'formAccepter/:id', component: FormulaireDonAccepterComponent, canActivate: [RouteGuardService]},
   {path: 'depotVente', component: DepotVenteComponent, canActivate: [RouteGuardService]},
   {path: 'listeDepotVente', component: ListeDepVenteComponent, canActivate: [RouteGuardService]},
-
+  {path: 'garde', component: GardeMeubleComponent, canActivate: [RouteGuardService]},
   {path: '', redirectTo: 'home', pathMatch: 'full'}
 ];
 

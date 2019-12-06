@@ -15,6 +15,7 @@ import { DonComponent } from './don/don.component';
 import { ListeDonComponent } from './don/liste-don/liste-don.component';
 import { EditDonComponent } from './don/edit-don/edit-don.component';
 import { MenuComponent } from './menu/menu.component';
+import { GardeMeubleComponent } from './garde-meuble/garde-meuble.component';
 import { FormulaireDonAccepterComponent } from './don/formulaire-don-accepter/formulaire-don-accepter.component';
 import { ListeDonSansChoixComponent } from './don/liste-don-sans-choix/liste-don-sans-choix.component';
 import { ArchiveComponent } from './don/archive/archive.component';
@@ -42,7 +43,7 @@ import { ListeDepVenteComponent } from './liste-dep-vente/liste-dep-vente.compon
     ArchiveComponent,
     ListeDepVenteComponent,
     ListeDepVenteComponent,
-
+    GardeMeubleComponent,
   ],
   imports: [
     BrowserModule,

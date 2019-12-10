@@ -49,11 +49,11 @@
     </div>
     <div>
         <img height="100" src="{{photo}}" />
-        <p>                 <button class="btn btn-dark" (click)="onEditPhoto(Don2)">edit</button></p>
+
         <p>
 
         <input type="file" (change)="onSelectedFile($event)">
-        <button class="btn btn-success" (click)="upload()">Envoyer</button>
+       <ng-container></ng-container>
       </p>
     </div>
     <button type="submit" class="btn btn-primary" [disabled]="DonForm.invalid">Soumettre</button>

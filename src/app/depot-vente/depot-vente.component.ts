@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DepotVenteService} from '../services/depot-vente.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {DepotVente} from '../modele/depot-vente';
+import {Depotvente} from '../modele/depotvente';
 import {DatePipe} from '@angular/common';
 
 
@@ -13,8 +13,9 @@ import {DatePipe} from '@angular/common';
   providers: [DatePipe]
 })
 export class DepotVenteComponent implements OnInit {
-  DepotVente: DepotVente;
+  DepotVente: Depotvente;
   id: number;
+  id2: number;
   datedept = new Date();
   dateVentedept = new Date();
   n: any;
@@ -30,8 +31,9 @@ export class DepotVenteComponent implements OnInit {
 
   ngOnInit() {
 
-    this.DepotVente = new DepotVente();
-
+    this.DepotVente = new Depotvente();
+    this.id2 = this.router.snapshot.params.id;
+    this.DepotVente.don_id = this.id2;
   }
   accepter(id, DepotVente) {
     this.depotVenteService.UpdateDepotVente(id, DepotVente).subscribe(
@@ -42,7 +44,7 @@ export class DepotVenteComponent implements OnInit {
   }
 
   save() {
-    this.depotVenteService.SaveDepotVente(this.DepotVente).subscribe(
+    this.depotVenteService.SaveDepotVente(this.id2 , this.DepotVente).subscribe(
       data => {
 
         this.route.navigate(['home']);

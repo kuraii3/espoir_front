@@ -22,7 +22,7 @@ import { ArchiveComponent } from './don/archive/archive.component';
 import {httpInterceptorProviders} from './auth/auth-interceptor';
 import {DepotVenteComponent} from './depot-vente/depot-vente.component';
 import { ListeDepVenteComponent } from './liste-dep-vente/liste-dep-vente.component';
-
+import { BeneficiaireDonComponent } from './beneficiaire-don/beneficiaire-don.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +44,7 @@ import { ListeDepVenteComponent } from './liste-dep-vente/liste-dep-vente.compon
     ListeDepVenteComponent,
     ListeDepVenteComponent,
     GardeMeubleComponent,
+    BeneficiaireDonComponent,
   ],
   imports: [
     BrowserModule,

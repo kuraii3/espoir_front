@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import {DepotVente} from '../modele/depot-vente';
+import {Depotvente} from '../modele/depotvente';
 @Injectable({
   providedIn: 'root'
 })
@@ -18,11 +18,11 @@ export class DepotVenteService {
   }
 
   DepotVenteById(id) {
-    return this.http.get<DepotVente>(`http://localhost:8081/deptVente/${id}`);
+    return this.http.get<Depotvente>(`http://localhost:8081/deptVente/${id}`);
   }
 
-  SaveDepotVente( deptVente) {
-    return this.http.post(`http://localhost:8081/deptVente/save`, deptVente);
+  SaveDepotVente( id , deptVente) {
+    return this.http.post(`http://localhost:8081/deptVente/save/${id}`, deptVente);
   }
 
   UpdateDepotVente(id, deptVente) {

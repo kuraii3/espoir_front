@@ -16,7 +16,7 @@ export class GardeMeubleComponent implements OnInit {
   formulaire:any;
   myDate = new Date();
   gar : GardeMeuble;
-
+  id: number;
   constructor(private gardemeubleServ: GardemeubleService ,private router: ActivatedRoute, private route: Router, private datePipe: DatePipe ) {
     // @ts-ignore
     this.myDate =  this.datePipe.transform(this.myDate, 'yyyy-MM-dd');
@@ -24,11 +24,13 @@ export class GardeMeubleComponent implements OnInit {
 
   ngOnInit() {
     this.gar = new GardeMeuble();
+    this.id = this.router.snapshot.params.id;
     this.gar.datededepot = this.myDate;
+    this.gar.don_id = this.id ;
   }
 
   save() {
-    this.gardemeubleServ.Savegardemeuble(this.gar).subscribe(
+    this.gardemeubleServ.Savegardemeuble(this.id , this.gar).subscribe(
       data => {
 
         console.log(data)

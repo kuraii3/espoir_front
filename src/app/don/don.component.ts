@@ -79,7 +79,7 @@ data => {
 
 
   });
-  this.route.navigate(['home']);
+  //this.route.navigate(['home']);
 }
 );
 

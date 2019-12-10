@@ -24,8 +24,8 @@ export class BeneficiaireDonService {
     return this.http.get<Beneficiaire>(`http://localhost:8081/beneficiaire/${id}`);
   }
 
-  Savebeneficiaire( beneficiaire) {
-    return this.http.post(`http://localhost:8081/beneficiaire/save`, beneficiaire);
+  Savebeneficiaire( id ,beneficiaire) {
+    return this.http.post(`http://localhost:8081/beneficiaire/save/${id}`, beneficiaire);
   }
 
   Updatebeneficiaire(id, beneficiaire) {

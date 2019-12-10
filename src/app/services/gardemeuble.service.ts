@@ -13,7 +13,7 @@ export class GardemeubleService {
   getGardeMeubleBoard(): Observable<string> {
     return this.http.get(this.gardemeubleUrl, { responseType: 'text' });
   }
-  Savegardemeuble( gardemeuble) {
-    return this.http.post(`http://localhost:8081/gardemeuble/save`, gardemeuble);
+  Savegardemeuble(id ,  gardemeuble) {
+    return this.http.post(`http://localhost:8081/gardemeuble/save/${id}`, gardemeuble);
   }
 }

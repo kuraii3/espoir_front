@@ -17,7 +17,12 @@
       <div class="valid-feedback">Valide.</div>
       <div class="invalid-feedback">Veuillez remplir ce champ.</div>
     </div>
-
+    <div class="form-group">
+      <label for="id">id don</label>
+      <input type="number" class="form-control" id="id" placeholder="Enter reception" name="id" value="this.id" [(ngModel)]="gar.don_id"required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
     <button type="submit" class="btn btn-primary" [disabled]="DonForm.invalid">Submit</button>
   </form>
 </div>

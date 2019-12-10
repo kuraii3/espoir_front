@@ -9,6 +9,7 @@ import {DonService} from "../../services/don.service";
 })
 export class ListeDonSansChoixComponent implements OnInit {
   formualire:any;
+  phot: any ;
   constructor(private donServ: DonService,private router: ActivatedRoute, private route: Router) { }
 
   ngOnInit() {

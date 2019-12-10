@@ -30,7 +30,8 @@
       <td>{{c.type}}</td>
       <td>{{c.tel}}</td>
       <td>{{c.description}}
-      <td>photo</td>
+      <td *ngIf=" [c.photo] == ''"> <img height="100" src="../../../assets/img/images.jpg" class="center"/>  </td>
+      <td *ngIf=" [c.photo] != ''"> <img height="100" src="../../../assets/img/{{c.photo}}" class="center"/>  </td>
       <td><input class="btn btn-outline-warning  btn-sm" (click)="edit(c.don_id)" value="edit">  </td>
       <!-- <td *ngIf=" [c.photo] == ''"> <img height="100" src="../../../assets/img/images.jpg" />  </td>
        <td *ngIf=" [c.photo] != ''"> <img height="100" src="../../../assets/img/{{c.photo}}" />  </td>

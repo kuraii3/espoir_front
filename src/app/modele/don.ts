@@ -12,6 +12,6 @@ export class Don {
   public  DateTransport:Date;
   public  transporteur:String;
   public  vehicules:String;
-  public  LieuStockage:String;
+  public  lieuStockage:String;
   public  isAccepted:Boolean;
 }

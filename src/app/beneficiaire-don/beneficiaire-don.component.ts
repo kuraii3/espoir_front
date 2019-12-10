@@ -20,11 +20,12 @@ export class BeneficiaireDonComponent implements OnInit {
   ngOnInit() {
     this.beneficiaire=new Beneficiaire();
     this.id = this.router.snapshot.params.id;
+    this.beneficiaire.don_id = this.id;
   }
 
   
   save() {
-    this.BeneficiaireDonService.Savebeneficiaire(this.beneficiaire).subscribe(
+    this.BeneficiaireDonService.Savebeneficiaire(this.id , this.beneficiaire).subscribe(
       data => {
        
         this.route.navigate(['home']);

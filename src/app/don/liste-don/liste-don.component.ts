@@ -15,7 +15,7 @@ export class ListeDonComponent implements OnInit {
     this.getAll();
   }
   getAll() {
-    this.donServ.AllDon().subscribe(
+    this.donServ.ListDonAccepted().subscribe(
       data => {
         this.formualire = data;
         console.log(data);
@@ -23,4 +23,5 @@ export class ListeDonComponent implements OnInit {
     );
   }
   edit(id) {this.route.navigate(['editDon/' + id]); }
+  benif(id) {this.route.navigate(['beneficiaire/' + id]); }
 }

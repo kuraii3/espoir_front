@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="alert alert-warning" *ngIf="DonForm.invalid && DonForm.dirty">enter valid form</div>
+    <h2>Affecter don à beneficiaire</h2>
+    <form  (ngSubmit)="!DonForm.invalid && save() " class="was-validated" #DonForm="ngForm">
+     
+        <div class="form-group">
+        <label for="ben_id">ID du beneficiaire</label>
+        <input type="number" class="form-control" id="ben_id" placeholder="Enter reception" name="ben_id"  [(ngModel)]="beneficiaire.id"required>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="ben_id">Nom demandeur</label>
+        <input type="string" class="form-control" id="demandeur" placeholder="Enter reception" name="demandeur"  [(ngModel)]="beneficiaire.demandeur"required>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="beneficiaire">Nom beneficiaire</label>
+        <input type="string" class="form-control" id="beneficiaire" placeholder="Enter reception" name="beneficiaire"  [(ngModel)]="beneficiaire.beneficiaire"required>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="telephone">Telephone beneficiaire</label>
+        <input type="number" class="form-control" id="telephone" placeholder="Enter reception" name="telephone"  [(ngModel)]="beneficiaire.telephone"required>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="adresse">Adresse beneficiaire</label>
+        <input type="string" class="form-control" id="adresse" placeholder="Enter reception" name="adresse"  [(ngModel)]="beneficiaire.adresse"required>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+      </div>
+
+      
+      <div class="form-group">
+        <label for="id">id don</label>
+        <input type="number" class="form-control" id="id" placeholder="Enter reception" name="id" value="this.id" [(ngModel)]="beneficiaire.don_id"required>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+      </div>
+
+  
+      <button type="submit" class="btn btn-primary" [disabled]="DonForm.invalid">Submit</button>
+    </form>
+  
+  
+  </div>
